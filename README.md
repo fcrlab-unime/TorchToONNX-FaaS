@@ -136,7 +136,18 @@ Model conversion processes can be time-consuming. Adjust the gateway timeouts to
     ```bash
     curl -X POST -H "Content-Type: application/json" -d @test.json http://127.0.0.1:8080/function/torch-to-onnx-faas
     ```
-
+2. **Invoke the Function without JSON File**:
+   ```bash
+   curl -X POST http://127.0.0.1:8080/function/torchtoonnx-faas \
+   -H "Content-Type: application/json" \
+   -d '{
+         "python_path": "CCN1D.py",
+         "weights_path": "model_weights.pth",
+         "model_class": "CCN1D",
+         "args": "input_channels=8 hidden_channels=64 num_layers=3 kernel_size=3 dropout=0.2 output_size=1",
+         "input_shape": [8, 128]
+         }'
+   ```
 -----
 
 ## Notes and Best Practices
