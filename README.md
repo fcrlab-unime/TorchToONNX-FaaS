@@ -40,6 +40,8 @@ Follow these steps to install and configure OpenFaaS:
 
 ## Function Creation and Deployment
 
+Before starting remember to setup your Minio instance credentials and buckets in the `torchtoonnx-faas.yml`file.
+
 1.  **Build the Function Image**:
     Build the function image based on your stack file (`.yml`):
 
